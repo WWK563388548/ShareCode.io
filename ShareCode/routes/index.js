@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+var nodemailer = require("nodemailer");
+var config = require("../config");
+var transporter = nodemailer.createTransport(config.mailer);
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'ShareCode.io - a collaborative editor' });
@@ -33,7 +37,20 @@ router.route('/contact')
         errorMessages: errors
       });
     } else {
-      res.render("thanks", {title: "ShareCode.io - a collaborative editor"});
+      // Send mail by nodemailer
+      var mailOption = {
+        from: 'ShareCode.io <no-reply@ShareCode.com>',
+        to: 'wc563388548@gmail.com',
+        subject: 'You got a message from a user.',
+        text: req.body.message
+      };
+
+      transporter.sendMail(mailOption, function(error, info){
+        if(error){
+          console.log(error);
+        }
+        res.render("thanks", {title: "ShareCode.io - a collaborative editor"});
+      });
     }
 });
 
