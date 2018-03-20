@@ -17,7 +17,24 @@ router.route('/contact')
     res.render("contact", {title: "ShareCode.io - a collaborative editor"});
 })
 .post(function(req, res, next){
-    res.render("thanks", {title: "ShareCode.io - a collaborative editor"});
+
+    // Check input things and display errors in the contact.hbs
+    req.checkBody('name', 'Empty name').notEmpty();
+    req.checkBody('email', 'Invalid email').isEmail();
+    req.checkBody('message', 'Empty message').notEmpty();
+    var errors = req.validationErrors();
+
+    if(errors){
+      res.render("contact", {
+        title: "ShareCode.io - a collaborative editor",
+        name: req.body.name,
+        email: req.body.email,
+        message: req.body.message,
+        errorMessages: errors
+      });
+    } else {
+      res.render("thanks", {title: "ShareCode.io - a collaborative editor"});
+    }
 });
 
 module.exports = router;
