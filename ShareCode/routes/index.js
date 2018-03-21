@@ -54,14 +54,4 @@ router.route('/contact')
     }
 });
 
-// Create login route
-router.get("/login", function(req, res, next){
-  res.render("login", {title: "Login your account"});
-});
-
-// Create register route
-router.get("/register", function(req, res, next){
-  res.render("register", {title: "Register a new account"});
-});
-
 module.exports = router;

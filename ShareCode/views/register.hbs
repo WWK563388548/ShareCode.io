@@ -1,4 +1,12 @@
 <form class="form-signin" method="POST">
+    
+    <!-- Displays error messages by a loop -->
+    {{#each errorMessages}}
+        <div class="alert alert-danger">
+            {{this.msg}}
+        </div>
+    {{/each}}
+
     <h2 class="form-signin-heading text-center">Register Account</h2>
     <br/>
 

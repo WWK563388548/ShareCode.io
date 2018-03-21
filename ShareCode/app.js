@@ -6,9 +6,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require("express-validator");
 var mongoose = require("mongoose");
+var passport = require('passport');
+var session = require('express-session');
+require('./passport');
 var config = require("./config");
 
-var index = require('./routes/index');
+var indexRoute = require('./routes/index');
+var authRoute = require('./routes/auth');
 
 mongoose.connect(config.dbConnstring);
 global.User = require("./models/user");
@@ -26,9 +30,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
+app.use(session({
+  secret: config.sessionKey,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {secure: true}
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/', indexRoute);
+app.use('/', authRoute);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
