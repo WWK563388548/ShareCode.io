@@ -12,6 +12,7 @@
     "express": "~4.15.5",
     "express-validator": "^5.0.3",
     "hbs": "~4.0.1",
+    "mongoose": "^5.0.11",
     "morgan": "~1.9.0",
     "nodemailer": "^3.1.5",
     "serve-favicon": "~2.4.5"
