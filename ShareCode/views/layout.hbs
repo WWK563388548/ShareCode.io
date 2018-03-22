@@ -24,6 +24,14 @@
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {{#if user}}
+              <li><a href="#">{{user.name}}</a></li>
+            {{else}}
+              <li><a href="/login">Login</a></li>
+              <li><a href="/register">Register</a></li>
+            {{/if}}
+          </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
