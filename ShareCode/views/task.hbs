@@ -1,1 +1,22 @@
-<h1>This is a new Task</h1>
+<div>
+    <div class="row">
+        <div class="col-md-8">
+            <textarea id="code-screen"></textarea>
+        </div>
+
+        <div class="col-md-4" id="chatbox">
+            <!-- CHAT BOX -->
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/ruby/ruby.min.js"></script>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("code-screen"), {
+        lineNumbers: true,
+        theme: "monokai"
+    });
+</script>
