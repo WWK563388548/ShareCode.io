@@ -42,12 +42,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/python/python.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/ruby/ruby.min.js"></script>
 
+<script src="/plugins/ot/ot.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
+    var EditorClient = ot.EditorClient;
+    var SocketIOAdapter = ot.SocketIOAdapter;
+    var CodeMirrorAdapter = ot.CodeMirrorAdapter;
+
+
     var socket = io.connect('http://localhost:3000');
     var editor = CodeMirror.fromTextArea(document.getElementById("code-screen"), {
         lineNumbers: true,
         theme: "monokai"
+    });
+
+    var cmClient;
+    function init(str, revision, clients, serverAdapter) {
+        editor.setValue(str);
+        cmClient = window.cmClient = new EditorClient(
+            revision, clients, serverAdapter, new CodeMirrorAdapter(editor)
+        );
+    };
+
+    socket.on('doc', function(obj){
+        init(obj.str, obj.revision, obj.clients, new SocketIOAdapter(socket));
     });
     
     var username = $("#chatbox-username").val();
@@ -58,7 +76,7 @@
     }
 
     var roomId = $('#roomId').val();
-    socket.emit('joinRoom', {room: roomId});
+    socket.emit('joinRoom', {room: roomId, username: username});
 
     var userMessage = function(name, text) {
         return (
