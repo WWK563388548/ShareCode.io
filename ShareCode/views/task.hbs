@@ -5,8 +5,26 @@
         </div>
 
         <div class="col-md-4" id="chatbox">
-            <!-- CHAT BOX -->
             <div class="panel panel-primary">
+                <!-- video call -->
+                <div id="video-container">
+                    <video autoplay id="second-video"></video>
+                    <video autoplay id="my-video" muted="true"></video>
+                    <div id="step2">
+                        <p>Your ID: <span id="my-id">####</span></p>
+                        <div class="form-inline">
+                            <input type="text" class="form-control" placeholder="Call User ID" id="callto-id"/>
+                            <a href="#" class="btn btn-sm btn-success" id="make-call">Call User</a>
+                        </div>
+                    </div>
+                    <div id="step3">
+                        <p>Talk to <span id="second-id">####</span>
+                            <a href="#" class="btn btn-sm btn-danger" id="end-call">Hang Up</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CHAT BOX -->
                 <div class="panel-heading">
                     Chat Room
                     <span class="pull-right" id="chatbox-username">
