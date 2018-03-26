@@ -1,5 +1,5 @@
 body {
-  min-height: 2000px;
+  min-height: 1500px;
   padding-top: 70px;
 }
 
@@ -9,3 +9,36 @@ body {
   margin: 0 auto;
 }
 
+.CodeMirror {
+  height: 800px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+#my-video {
+  margin-top: 10px;
+  width: 280px;
+  height: auto;
+  background-color: #eee;
+}
+
+#second-video {
+  width: 100%;
+  height: 75%;
+  max-height: 480px;
+  background-color: #eee;
+}
+
+#video-container {
+  text-align: center;
+}
+
+#step1-error, #step2, #step3 {
+  display: none;
+}
+
+#my-id {
+  font-weight: bold;
+}
