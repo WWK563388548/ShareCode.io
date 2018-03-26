@@ -13,7 +13,8 @@ This application was created by:
 * NPM
 * Express
 * MongoDB
-* <a href="">ot.js</a>
+* Socket.io
+* <a href="https://github.com/Operational-Transformation/ot.js">ot.js(Operational-Transformatio)</a>
 * WebRTC
 ...
 <hr>
