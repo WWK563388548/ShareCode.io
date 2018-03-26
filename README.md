@@ -8,13 +8,13 @@ This application was created by:
 * CSS
 * BootStrap
 * jQuery
-* JavaScript(ES5, but I will refactor it by ES6 in the future)
+* JavaScript
 * Node.js(8.9.4)
 * NPM
 * Express
 * MongoDB
 * Socket.io
-* <a href="https://github.com/Operational-Transformation/ot.js">ot.js(Operational-Transformatio)</a>
+* <a href="https://github.com/Operational-Transformation/ot.js">ot.js(Operational-Transformation)</a>
 * WebRTC
 ...
 <hr>
