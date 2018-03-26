@@ -15,7 +15,7 @@ This application was created by:
 * MongoDB
 * Socket.io
 * <a href="https://github.com/Operational-Transformation/ot.js">ot.js(Operational-Transformation)</a>
-* WebRTC
+* <a href="http://peerjs.com/">WebRTC(Peer.js)</a>
 ...
 <hr>
 Follow the steps below to build and run this web application:
