@@ -1,5 +1,9 @@
 # ShareCode.io
 ## A web application for share what you are coding/typing on the screen with other people at the same time(A collaborative editor with video call)
+<br>
+
+![image](screenshot/ShareCodeScreenShot.gif)
+<br>
 <hr>
 This application was created by: 
 <br>
