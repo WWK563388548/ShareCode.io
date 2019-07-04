@@ -1,7 +1,6 @@
 # ShareCode.io
 ## A web application for share what you are coding/typing on the screen with other people at the same time(A collaborative editor with video call)
 
-## UPDATE: The function of video call can not work because of <a href="https://github.com/peers/peerjs/issues/423">Peerjs does not work now</a> (Function of Chatting still working. )
 <br>
 
 ![image](screenshot/ShareCodeScreenShot.gif)
